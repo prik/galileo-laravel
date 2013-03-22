@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Galileo (Laravel) by bureaublank</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Galileo (Laravel)</h1>
+        <p>The Official Bureau Blank Developer Vagrant + Puppet setup</p>
+
+        <p class="view"><a href="https://github.com/bureaublank/galileo-laravel">View the Project on GitHub <small>bureaublank/galileo-laravel</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/bureaublank/galileo-laravel/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/bureaublank/galileo-laravel/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/bureaublank/galileo-laravel">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>This repo houses the Puppet manifests and Vagrantfile that we use for local Laravel 4 based development on Mac OS X. Downloading this into the directory of your choosing and running <strong>vagrant up</strong> will result in a fully functional Laravel 4 installation in a Virtual machine with the following stack:</p>
+
+<ul>
+<li>Ubuntu 12.04 Precise32</li>
+<li>NGINX</li>
+<li>PHP-FPM (extensions: mcrypt, cli, apc, xdebug, apc)</li>
+<li>MySQL</li>
+<li>Composer</li>
+<li>Laravel 4</li>
+</ul><h3>Requirements</h3>
+
+<ul>
+<li>VirtualBox</li>
+<li>Vagrant</li>
+</ul><h3>Setting it Up</h3>
+
+<ol>
+<li>
+<p>Clone the <strong>Galileo</strong> repo into where you want to have your Vagrant box setup. This repo contains the Vagrantfile which will configure your box and Puppet manifests for provisioning of the box.</p>
+
+<pre><code>git clone https://github.com/bureaublank/galileo-laravel.git
+</code></pre>
+</li>
+<li>
+<p>Once cloned, cd into the directory, and run:</p>
+
+<pre><code>vagrant up
+</code></pre>
+</li>
+<li><p><strong>This will start the process. It may take a while depending on your connection!</strong><br>
+A few things are happening: First, it's downloading an Ubuntu 12.04 Precise32 box if you don't already have it. After that's done, the box will boot and Puppet will provision the empty box with the stack described above. </p></li>
+<li><p>Once it's all done, just go to <a href="http://localhost:8888">http://localhost:8888</a> in a web browser and you should see the default Laravel 4 "Hello World!" page. </p></li>
+<li><p>**The www/ folder where you clone the repo is the web root shared with the virtual machine and where Laravel was installed into. **</p></li>
+</ol><hr><h3>Accessing MySQL from Sequel Pro</h3>
+
+<p>If you like using Sequel Pro to manage your MySQL databases, you'll be happy to know that you can connect to the MySQL server running inside of the virtual box through Sequel Pro: </p>
+
+<ol>
+<li>Use the SSH option to connect</li>
+<li>
+<p>Default credentials are as follows:</p>
+
+<pre><code>MySQL Host: 127.0.0.1
+Username: myadmin
+Password: (blank)
+
+SSH Host: localhost
+SSH User: vagrant
+SSH Pass: vagrant
+SSH Port: 2222
+</code></pre>
+</li>
+<li><p>Click YES to accept the message about keys. </p></li>
+</ol>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/bureaublank">bureaublank</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
