@@ -1,5 +1,5 @@
 server {
-	listen 8888;
+	listen 80;
 	server_name _;
     access_log                              /vagrant/www/app/storage/logs/access.log;
     error_log                               /vagrant/www/app/storage/logs/error.log;

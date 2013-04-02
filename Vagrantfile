@@ -11,7 +11,7 @@ Vagrant::Config.run do |config|
   config.vm.network :hostonly, "33.33.33.33"
   
   config.vm.forward_port 22, 2222
-  config.vm.forward_port 8888, 8888
+  config.vm.forward_port 80, 8888
   config.vm.forward_port 3306, 3333
   
   config.vm.share_folder("v-root", "/vagrant/www", "./www", :extra => 'dmode=777,fmode=777')
