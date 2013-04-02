@@ -49,7 +49,7 @@ class laravel
     { 
         'run-composer-installation':
             command => "/bin/sh -c 'cd /vagrant/www/ && composer install'",
-            require => [Exec['global composer'], Package['git-core']],
+            require => [Exec['unzip-laravel'], Exec['global composer'], Package['git-core']],
             timeout => 900,
     }
 
