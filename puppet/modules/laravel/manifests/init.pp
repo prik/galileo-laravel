@@ -22,7 +22,8 @@ class laravel
             cwd     => '/tmp',
             command => '/usr/bin/wget http://github.com/laravel/laravel/archive/develop.zip',
             creates => '/tmp/develop.zip',
-            require => Exec['install composer']
+            require => Exec['install composer'],
+            unless => "[ -d '/vagrant/www' ]"
     }
 
 
@@ -31,7 +32,8 @@ class laravel
         'unzip-laravel':
             cwd     => '/tmp',
             command => "/usr/bin/unzip develop.zip && /bin/cp -R laravel-develop/* ${root} && /bin/rm -rf develop.zip laravel-develop",
-            require => [ File["${root}"], Package['unzip'], Exec['download-laravel'] ]
+            require => [ File["${root}"], Package['unzip'], Exec['download-laravel'] ],
+            unless => "[ -d '/vagrant/www' ]"
     }
 
     file 

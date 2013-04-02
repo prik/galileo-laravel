@@ -25,6 +25,7 @@ class nginx
             notify => Service['nginx'],
     }
 
+
     file 
     { 
         'default-nginx-disable':
